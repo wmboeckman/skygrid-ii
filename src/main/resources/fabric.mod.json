@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "skygrid2",
+  "version": "${version}",
+  "name": "SkyGrid II",
+  "description": "",
+  "authors": ["Insomniac_"],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/skygrid2/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "io.insomniac.skygrid2.client.Skygrid2DataGenerator"
+    ],
+    "client": [
+      "io.insomniac.skygrid2.client.Skygrid2Client"
+    ],
+    "main": [
+      "io.insomniac.skygrid2.Skygrid2"
+    ],
+    "modmenu": [
+      "io.insomniac.skygrid2.client.SkyGridModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "skygrid2.mixins.json",
+    {
+      "config": "skygrid2.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
